@@ -478,7 +478,7 @@
 	}
     
     NSDictionary *childNodes = [self childNodes];
-	for (NSString *key in childNodes)
+	for (NSString *key in [[childNodes allKeys] sortedArrayUsingSelector: @selector(compare:)])
 	{
 		[nodes addObject:[XMLDictionaryParser XMLStringForNode:childNodes[key] withNodeName:key]];
 	}
