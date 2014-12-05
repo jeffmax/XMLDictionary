@@ -138,7 +138,7 @@
     {
         NSDictionary *attributes = [(NSDictionary *)node attributes];
         NSMutableString *attributeString = [NSMutableString string];
-        for (NSString *key in [attributes allKeys])
+        for (NSString *key in [[attributes allKeys] sortedArrayUsingSelector: @selector(compare:)])
         {
             [attributeString appendFormat:@" %@=\"%@\"", [[key description] XMLEncodedString], [[attributes[key] description] XMLEncodedString]];
         }
